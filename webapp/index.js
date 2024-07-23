@@ -1,17 +1,9 @@
-sap.ui.define(
-  ["sap/m/Text", "sap/m/Button", "sap/m/MessageToast"],
-  function (Text, Button, MessageToast) {
-    "use strict";
+sap.ui.define(["sap/ui/core/mvc/XMLView"], async function (XMLView) {
+  "use strict";
 
-    new Text({
-      text: "Hello World!"
-    }).placeAt("content");
+  let mainView = await XMLView.create({
+    viewName: "com.demo.ui5.walkthrough.view.App"
+  });
 
-    new Button({
-      text: "Press me",
-      press: function () {
-        MessageToast.show("Button pressed!");
-      }
-    }).placeAt("content");
-  }
-);
+  mainView.placeAt("content");
+});
